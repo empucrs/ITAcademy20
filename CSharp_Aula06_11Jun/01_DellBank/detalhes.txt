@@ -1,0 +1,31 @@
+--> Sistema Bancário (DellBank)
+  --> Cliente com contas bancárias
+    * Nome, Data de nascimento
+    * Pode ter uma ou mais contas
+  --> Tipo de contas
+    --> Comum as contas
+      * Data de abertura da conta
+      * Saldo
+      * Realização de saque ou depósito
+    --> Conta corrente
+      --> Conta simples
+        * Não tem crédito  
+      --> Conta especial
+        * tem limite de crédito
+    --> Conta poupança
+     * Não tem crédito
+     * Tem juros a cada mês (1% am)
+  --> Consultas:
+    * Listas os clientes
+      * Só os nomes
+      * Só os nomes e quantidade de contas
+      * Só o nome e valores totais
+      * Só o nome e o valor total por tipo de conta
+    * Listar a quantidade de contas
+      * Por tipo
+      * Por valor
+  --> Operacoes:
+    * Cadastro de usuário
+    * Cadastro de conta para usuário
+    * Saque de valores
+    * Aplicação de juros para as contas poupança/investimento

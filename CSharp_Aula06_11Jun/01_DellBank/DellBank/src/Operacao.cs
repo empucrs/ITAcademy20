@@ -2,10 +2,10 @@ public enum tipoDeOperacao{saque, deposito};
 public class Operacao
 {
     public tipoDeOperacao Tipo{get; private set;}
-    public int Valor {get; private set;}
+    public double Valor {get; private set;}
     public DateTime MomentoDaOperacao {get; private set;}
 
-    public Operacao(tipoDeOperacao tipo, int valor, DateTime momentoDaOperacao)
+    public Operacao(tipoDeOperacao tipo, double valor)
     {
         this.Tipo = tipo;
         this.Valor = valor;
