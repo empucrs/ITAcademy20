@@ -1,0 +1,29 @@
+﻿@ViewData["Title"] = "Home Page - lista de ceps"
+@model IEnumerable<_01_Controller.Models.CEPViewModel>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome - Veja a lista de ceps que tenho disponível </h1>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <td>CEP</td>
+                <td>Logradouro</td>
+                <td>Bairro</td>
+                <td>Cidade</td>
+                <td>Estado</td>
+            </tr>            
+        </thead>
+        <tbody> 
+            @foreach(CEPViewModel cvm in Model){
+                <tr>
+                    <td>@cvm.CEP</td>
+                    <td>@cvm.logradouro</td>
+                    <td>@cvm.Bairro</td>
+                    <td>@cvm.Cidade</td>
+                    <td>@cvm.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
