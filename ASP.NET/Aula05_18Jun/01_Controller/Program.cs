@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<ICEPService, ArmazenaCEP>();
+builder.Services.AddSingleton<ICEPService, ConcorrenteCEP>();
 
 var app = builder.Build();
 

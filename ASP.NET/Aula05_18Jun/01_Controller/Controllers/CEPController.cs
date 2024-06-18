@@ -20,8 +20,9 @@ public class CEPController : Controller
 
     [HttpPost]
     public IActionResult cadastra(CEPViewModel novoCEP){
-        myService.cadastreUmCEP(novoCEP);
-        return View("lista",myService.listaTodosOsCEPs());
+        if(ModelState.IsValid)
+            myService.cadastreUmCEP(novoCEP);
+        return View("lista",myService.listaTodosOsCEPs());        
     }
 
 }
