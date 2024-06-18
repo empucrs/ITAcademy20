@@ -34,7 +34,7 @@ public class CEPController : Controller
     public IActionResult cadastra(CEPViewModel novoCEP){
         if(ModelState.IsValid)
             myService.cadastreUmCEP(novoCEP);
-        return View("lista",myService.listaTodosOsCEPs());        
+        return View("lista",myService.listaTodosOsCEPs());
     }
 
 }

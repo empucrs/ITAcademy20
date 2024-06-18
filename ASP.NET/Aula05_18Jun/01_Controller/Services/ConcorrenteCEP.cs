@@ -16,7 +16,11 @@ public class ConcorrenteCEP : ICEPService
     }
     public void cadastreUmCEP(CEPViewModel novoCEP)
     {
-        listaDeCEPs.TryAdd(novoCEP.CEP, novoCEP);
+        if(!listaDeCEPs.TryAdd(novoCEP.CEP, novoCEP)){
+            CEPViewModel? aux;
+            listaDeCEPs.TryGetValue(novoCEP.CEP, out aux);
+            listaDeCEPs.TryUpdate(novoCEP.CEP, novoCEP, aux!);
+        }
     }
 
     public IEnumerable<CEPViewModel> listaTodosOsCEPs()

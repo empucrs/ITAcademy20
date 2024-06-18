@@ -2,10 +2,11 @@
 @model _01_Controller.Models.CEPViewModel;
 
 <H2>Cadastro de CEP</H2>
-<form asp-action="cadastra">
-    <div class="form-group">
+
+<form asp-action="cadastra")>
+    <div class="form-group">        
         <label asp-for="CEP" class="control-label"></label>
-        <input asp-for="CEP" class="form-control" />
+        <input asp-for="CEP" class="form-control" readonly=@(!(Model is null)) />
         <span asp-validation-for="CEP" class="text-danger" />
     </div>
     <div class="form-group">
@@ -39,7 +40,7 @@
         <span asp-validation-for="numeroQq" class="text-danger" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+        <input type="submit" value=@((Model is null)?"Cadastrar":"Salvar") class="btn btn-primary"/>
     </div>
 </form>
 
