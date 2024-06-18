@@ -14,9 +14,21 @@ public class CEPController : Controller
         return View(myService.listaTodosOsCEPs());
     }
 
+    /*
     public IActionResult cadastra(){
         return View();
     }
+    */
+
+    public IActionResult cadastra(string? id){
+        if(id==null)
+            return View();
+        else{
+            CEPViewModel? cvm = myService.pesquiseUmCEPEspecifico(id);
+            return View(cvm);
+        }
+    }
+
 
     [HttpPost]
     public IActionResult cadastra(CEPViewModel novoCEP){

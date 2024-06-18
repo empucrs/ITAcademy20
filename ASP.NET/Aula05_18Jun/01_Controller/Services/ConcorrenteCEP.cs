@@ -26,6 +26,8 @@ public class ConcorrenteCEP : ICEPService
 
     public CEPViewModel? pesquiseUmCEPEspecifico(string CEP)
     {
-        throw new NotImplementedException();
+        CEPViewModel? result;        
+        listaDeCEPs.TryGetValue(CEP, out result);
+        return result;        
     }
 }
