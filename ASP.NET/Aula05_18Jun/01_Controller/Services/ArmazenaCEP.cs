@@ -6,16 +6,76 @@ public class ArmazenaCEP : ICEPService
 {
     private List<CEPViewModel> listaDeCEPs;
 
-    public ArmazenaCEP(){
+    public ArmazenaCEP()
+    {
         listaDeCEPs = new List<CEPViewModel>();
-        listaDeCEPs.Add(new CEPViewModel(){CEP="90470320", logradouro="Rua Primeiro de Janeiro", Bairro="Três Figueiras", Cidade="Porto Alegre", Estado="RS", DataDoCadastro=DateTime.Now, numeroQq=0 });
-        listaDeCEPs.Add(new CEPViewModel(){CEP="90150040", logradouro="Rua Augusto Melecchi", Bairro="Menino Deus", Cidade="Florianópolis", Estado="SC", DataDoCadastro=DateTime.Now, numeroQq=1 });
-        listaDeCEPs.Add(new CEPViewModel(){CEP="91740000", logradouro="Avenida da Cavalhada", Bairro="Cavalhada", Cidade="Curitiba", Estado="PR", DataDoCadastro=DateTime.Now, numeroQq=2 });
-        listaDeCEPs.Add(new CEPViewModel(){CEP="90035005", logradouro="Rua Ramiro Barcelos", Bairro="Independência", Cidade="Birigui", Estado="SP", DataDoCadastro=DateTime.Now, numeroQq=3 });
+        listaDeCEPs.Add(
+            new CEPViewModel()
+            {
+                CEP = "90470320",
+                logradouro = "Rua Primeiro de Janeiro",
+                Bairro = "Três Figueiras",
+                Cidade = "Porto Alegre",
+                Estado = "RS",
+                DataDoCadastro = DateTime.Now,
+                numeroQq = 0
+            }
+        );
+        listaDeCEPs.Add(
+            new CEPViewModel()
+            {
+                CEP = "90150040",
+                logradouro = "Rua Augusto Melecchi",
+                Bairro = "Menino Deus",
+                Cidade = "Florianópolis",
+                Estado = "SC",
+                DataDoCadastro = DateTime.Now,
+                numeroQq = 1
+            }
+        );
+        listaDeCEPs.Add(
+            new CEPViewModel()
+            {
+                CEP = "91740000",
+                logradouro = "Avenida da Cavalhada",
+                Bairro = "Cavalhada",
+                Cidade = "Curitiba",
+                Estado = "PR",
+                DataDoCadastro = DateTime.Now,
+                numeroQq = 2
+            }
+        );
+        listaDeCEPs.Add(
+            new CEPViewModel()
+            {
+                CEP = "90035005",
+                logradouro = "Rua Ramiro Barcelos",
+                Bairro = "Independência",
+                Cidade = "Birigui",
+                Estado = "SP",
+                DataDoCadastro = DateTime.Now,
+                numeroQq = 3
+            }
+        );
     }
+
     public void cadastreUmCEP(CEPViewModel novoCEP)
     {
         listaDeCEPs.Add(novoCEP);
+    }
+
+    public bool editarUmCEP(CEPViewModel novoCEP)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool ExcluaUmCEP(string CEP)
+    {
+        var cepToDelete = listaDeCEPs.FirstOrDefault(x => x.CEP == CEP);
+        if (cepToDelete == null)
+            return false;
+        listaDeCEPs.Remove(cepToDelete);
+        return true;
     }
 
     public IEnumerable<CEPViewModel> listaTodosOsCEPs()
@@ -27,4 +87,5 @@ public class ArmazenaCEP : ICEPService
     {
         throw new NotImplementedException();
     }
+    
 }
