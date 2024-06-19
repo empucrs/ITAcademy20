@@ -8,5 +8,4 @@ public interface ICEPService
     CEPViewModel? pesquiseUmCEPEspecifico(string CEP);
     void cadastreUmCEP(CEPViewModel novoCEP);
     bool ExcluaUmCEP(string CEP);
-    bool editarUmCEP(CEPViewModel novoCEP);
 }

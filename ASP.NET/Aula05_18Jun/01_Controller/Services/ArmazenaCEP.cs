@@ -64,11 +64,6 @@ public class ArmazenaCEP : ICEPService
         listaDeCEPs.Add(novoCEP);
     }
 
-    public bool editarUmCEP(CEPViewModel novoCEP)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool ExcluaUmCEP(string CEP)
     {
         var cepToDelete = listaDeCEPs.FirstOrDefault(x => x.CEP == CEP);

@@ -93,12 +93,5 @@ public class ConcorrenteCEP : ICEPService
         return listaDeCEPs.TryRemove(CEP, out aux);
     }
 
-    public bool editarUmCEP(CEPViewModel novoCEP)
-    {
-        CEPViewModel? aux;
-        listaDeCEPs.TryGetValue(novoCEP.CEP, out aux);
-        if (aux == null)
-            return false;
-        return listaDeCEPs.TryUpdate(novoCEP.CEP, novoCEP, aux);
-    }
+
 }
